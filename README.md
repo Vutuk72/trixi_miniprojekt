@@ -1,4 +1,5 @@
 složka V1 je bez AI 3-4 dny dom
+
 složka V2 s AI 2-3 hodiny stax
 
 moje přidaná hodnota model.xml(trixi-miniprojekt\v2 s ai\test\resources) a schema-oracle.sql (trixi-miniprojekt\v2 s ai\src\main\resources\db) dělané ve vlastním grafickém designeru torm(wip).
