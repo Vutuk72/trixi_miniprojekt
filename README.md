@@ -7,3 +7,5 @@ o čem je grafiký designer? sjednotit db orm a dokumentaci do jedno celku
 detailně: vyvíjím orm které nebude mít problémy hibernatu(anemický model) a tím prodloužit životnost db. V rámci rozhodnutí v architektůře orm jako je model first nebo object per table umožňuje sjendotit orm s db a dokumentaci.
 
 projekt je stále wip a zatím nechci ho vystavovat na internet, proto rád bych ho ukázal osobně.
+
+ukázka desigenru designerORM.PNG
