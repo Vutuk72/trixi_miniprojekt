@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database-schema xmlns="http://dbgen.schema/2.0" version="2.0" xmlns:java="http://dbgen.schema/2.0/java" xmlns:gdsh="cobawstmainframe" xmlns:oracle="http://dbgen.schema/2.0/oracle">
+
+    <metadata>
+        <name>Generated Database Schema</name>
+        <created>2026-02-16</created>
+    </metadata>
+
+    <database>
+        <vendor>oracle</vendor>
+    </database>
+    <java:config package="com.example.generated"/>
+    <meta-attributes>
+        <meta name="gdsh:orig-name"/>
+        <meta name="u"/>
+        <meta name="uu"/>
+        <meta name="uui"/>
+        <meta name="uuid"/>
+    </meta-attributes>
+    <tables>
+        <table name="OBEC" java:name="Obec">
+            <description>tabulkaobcí</description>
+            <meta-attributes>
+                <meta name="uuid" description="odvozeny kod OB.123456"/>
+            </meta-attributes>
+            <columns>
+                <column name="KOD" type="number" oracle:type="NUMBER" oracle:precision="19" primary-key="true" nullable="false" writeable="true" java:type="Integer" java:name="kod">
+                    <description>Primární klíč.</description>
+                </column>
+                <column name="NAZEV" type="string" oracle:type="VARCHAR2" oracle:size="50" nullable="false" writeable="true" java:type="String" java:name="nazev"/>
+            </columns>
+            <indexes>
+                <index name="KOD" unique="true">
+                    <column>KOD</column>
+                </index>
+            </indexes>
+        </table>
+
+        <table name="CASTI_OBCE" java:name="CastiObce">
+            <description>casti obce</description>
+            <meta-attributes>
+                <meta name="uuid" description="odvozeny kod CO:123456"/>
+            </meta-attributes>
+            <columns>
+                <column name="KOD" type="number" oracle:type="NUMBER" oracle:precision="19" primary-key="true" nullable="false" writeable="true" unique="true" java:type="Integer" java:name="kod">
+                    <description>Primární klíč.</description>
+                </column>
+                <column name="NAZEV" type="string" oracle:type="VARCHAR2" oracle:size="50" nullable="false" writeable="true" java:type="String" java:name="nazev">
+                    <description>názvy castí obcí</description>
+                </column>
+                <column name="OBEC_KOD" type="number" oracle:type="NUMBER" oracle:precision="19" nullable="false" writeable="true" java:type="Integer" java:name="obecKod">
+                    <description>Vazba na OBEC.KOD</description>
+                </column>
+            </columns>
+        </table>
+
+        <foreign-keys>
+            <foreign-key name="FK_CASTI_OBCE_OBEC" ondelete="CASCADE">
+                <from table="CASTI_OBCE" property="obec">
+                    <column>OBEC_KOD</column>
+                </from>
+                <to table="OBEC" property="castiObces">
+                    <column>KOD</column>
+                </to>
+            </foreign-key>
+        </foreign-keys>
+    </tables>
+</database-schema>
